@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './components/Home';
+import { Route, Switch } from 'react-router';
+
+import HomeScreen from './Screens/HomeScreen'
+import AboutScreen from './Screens/AboutScreen'
+import ServicesScreen from './Screens/ServicesScreen'
+import ContactScreen from './Screens/ContactScreen'
 import './custom.css'
+import Navbar from './components/NavBar';
+import Layout from './components/Shared/Layout';
+
 
 export default class App extends Component {
   static displayName = App.name;
 
   render () {
     return (
-      <Layout>
-        <Route exact path='/' component={Home} />
+      <Layout> 
+      
+        <Route exact path='/' component={HomeScreen} />
+        <Route path='/about' component={AboutScreen} />
+        <Route path='/services' component={ServicesScreen} />
+        <Route path='/contact' component={ContactScreen} />
+
       </Layout>
     );
   }
