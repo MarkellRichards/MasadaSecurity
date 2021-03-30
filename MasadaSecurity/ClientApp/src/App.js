@@ -6,7 +6,6 @@ import AboutScreen from './Screens/AboutScreen'
 import ServicesScreen from './Screens/ServicesScreen'
 import ContactScreen from './Screens/ContactScreen'
 import './custom.css'
-import Navbar from './components/NavBar';
 import Layout from './components/Shared/Layout';
 
 
@@ -15,13 +14,11 @@ export default class App extends Component {
 
   render () {
     return (
-      <Layout> 
-      
+      <Layout>     
         <Route exact path='/' component={HomeScreen} />
         <Route path='/about' component={AboutScreen} />
         <Route path='/services' component={ServicesScreen} />
         <Route path='/contact' component={ContactScreen} />
-
       </Layout>
     );
   }
