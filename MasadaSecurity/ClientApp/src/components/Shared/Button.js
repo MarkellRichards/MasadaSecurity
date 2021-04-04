@@ -11,17 +11,18 @@ export const ButtonLink = styled(LinkS)`
     cursor: pointer;
     border: none;
     white-space: nowrap;
-    background: #f3f3f3;
+    background: #13263b;
     display: flex;
     justify-content: center;
+    color: #fff;
     align-items: center;
     width: fit-content;
-    box-shadow: 5px 10px 20px  rgba(0, 0, 0, 0.2);
+    /* box-shadow: 5px 5px 10px  rgba(255, 255, 255, 0.2); */
     transition: .2s ease-in-out;
 
     &:hover {
-        background: #13263b;
-        color: #fff;
-        box-shadow:  5px 10px 15px rgba(255, 255, 255, 0.2);
+        background: #f3f3f3;
+        color: #000;
+        box-shadow:  5px 10px 15px rgba(0, 0, 0, 0.2);
     }
 `

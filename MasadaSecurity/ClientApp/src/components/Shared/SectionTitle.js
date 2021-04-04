@@ -5,5 +5,5 @@ export const SectionTitle = styled.h1`
     /* font-weight: bold; */
     letter-spacing: 5px;
     text-align: center;
-    margin-top: 2rem;
+    margin: 2rem 0;
 `

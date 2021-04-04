@@ -52,7 +52,7 @@ const HeroParagraph = styled.p`
 const HeroSection = () => {
   return (
     <>
-      <HeroContainer>
+      <HeroContainer id="#hero">
         <ContentContainer>
           <HeroContent>
             <HeroTitle>Masada Security</HeroTitle>
@@ -60,7 +60,7 @@ const HeroSection = () => {
               Fast, Affordable, and Efficient security for you and your company.
             </HeroParagraph>
             <ButtonLink
-              to="#services"
+              to="#about"
               smooth={true}
               duration={500}
               spy={true}

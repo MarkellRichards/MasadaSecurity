@@ -1,11 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { Link as LinkR } from "react-router-dom";
 import { SectionTitle } from "../Shared/SectionTitle";
-import { ButtonLink } from "../Shared/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUsers,
+  faSearch,
+  faUserShield,
+  faUserSecret,
+} from "@fortawesome/free-solid-svg-icons";
 
 const SectionWrapper = styled.div`
-  padding: 4rem 0;
+  padding: 7rem 0;
+  background: #fff;
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -14,11 +20,12 @@ const Wrapper = styled.div`
 `;
 const ServicesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   max-width: 1300px;
   justify-items: center;
-  column-gap: 2.5rem;
-  height: 400px;
+  padding: 3rem 0;
+  column-gap: 4rem;
+  row-gap: 6rem;
 `;
 
 const ServicesCard = styled.div`
@@ -26,91 +33,100 @@ const ServicesCard = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 0 1rem;
-  max-width: 350px;
-`;
-
-const ServicesCardImage = styled.img`
-  border-radius: 75%;
-  height: 150px;
-  padding: 1rem 2rem;
-  justify-self: center;
+  max-width: 500px;
 `;
 
 const HR = styled.hr`
-  border-bottom: 1px solid #264c76;
+  border-bottom: 1px solid #13263b;
   margin-bottom: 1rem;
 `;
 
 const ServicesCardTitle = styled.h2`
   font-size: 2rem;
   text-transform: uppercase;
-  padding: 1rem 0 0.5rem 0;
+  padding: 3rem 0 0.5rem 0;
   text-align: left;
+  color: #13263b;
 `;
 
 const ServicesCardDescription = styled.p`
   font-size: 1.6rem;
   line-height: 2.5rem;
+  color: #13263b;
 `;
 
-const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-`;
+let style = { color: "#13263b" };
+let iconStyle = {
+  marginRight: "1.5rem",
+  width: "25px",
+};
 
 const ServicesSection = () => {
   return (
     <SectionWrapper id="#services">
-      <SectionTitle>Our Services</SectionTitle>
+      <SectionTitle style={style}>Our Services</SectionTitle>
       <Wrapper>
         <ServicesGrid>
           <ServicesCard>
-            <ServicesCardImage src="https://source.unsplash.com/random" />
-            <ServicesCardTitle>Service name</ServicesCardTitle>
+            <ServicesCardTitle>
+              <FontAwesomeIcon icon={faSearch} size="lg" style={iconStyle} />
+              Criminal and Civil Investigation
+            </ServicesCardTitle>
             <HR />
             <ServicesCardDescription>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae esse aliquam quod maiores dolore officiis iusto, in
-              earum praesentium nisi quia ipsam distinctio commodi illo.
+              Masada will help you gather, discover, prepare, identify and
+              present evidence for criminal and civil cases.
             </ServicesCardDescription>
           </ServicesCard>
           <ServicesCard>
-            <ServicesCardImage src="https://source.unsplash.com/random" />
-            <ServicesCardTitle>Service name</ServicesCardTitle>
+            <ServicesCardTitle>
+              <FontAwesomeIcon
+                icon={faUserShield}
+                size="lg"
+                style={iconStyle}
+              />
+              Threat assessments
+            </ServicesCardTitle>
             <HR />
             <ServicesCardDescription>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae esse aliquam quod maiores dolore officiis iusto, in
-              earum praesentium nisi quia ipsam distinctio commodi illo.
+              Threat assessments are a factual-based approach to finding
+              security risks; this can help find possible dangers on your
+              property or within employees. Keep your company safe by being
+              proactive.
             </ServicesCardDescription>
           </ServicesCard>
           <ServicesCard>
-            <ServicesCardImage src="https://source.unsplash.com/random" />
-            <ServicesCardTitle>Service name</ServicesCardTitle>
+            <ServicesCardTitle>
+              <FontAwesomeIcon icon={faUsers} size="lg" style={iconStyle} />
+              Security Consulting
+            </ServicesCardTitle>
             <HR />
             <ServicesCardDescription>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae esse aliquam quod maiores dolore officiis iusto, in
-              earum praesentium nisi quia ipsam distinctio commodi illo.
+              With our years of experience, we have seen several types of crime
+              scenes and faulty camera angles. Let us help you prevent
+              burglaries by finding the right spots for your security system.
             </ServicesCardDescription>
           </ServicesCard>
           <ServicesCard>
-            <ServicesCardImage src="https://source.unsplash.com/random" />
-            <ServicesCardTitle>Service name</ServicesCardTitle>
+            <ServicesCardTitle>
+              <FontAwesomeIcon
+                icon={faUserSecret}
+                size="lg"
+                style={iconStyle}
+              />
+              Intelligence Collections
+            </ServicesCardTitle>
             <HR />
             <ServicesCardDescription>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae esse aliquam quod maiores dolore officiis iusto, in
-              earum praesentium nisi quia ipsam distinctio commodi illo.
+              Intelligence Collections is a process used to find information
+              that brings value to your company and safety. The data is often
+              restricted or secret and allows us to add an extra layer of
+              protection to the company, as we see dangers that we may not have
+              seen otherwise.
             </ServicesCardDescription>
           </ServicesCard>
         </ServicesGrid>
       </Wrapper>
-      <ButtonWrapper>
-        <ButtonLink to="services">View All Services</ButtonLink>
-      </ButtonWrapper>
     </SectionWrapper>
   );
 };
