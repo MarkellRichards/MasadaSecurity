@@ -4,8 +4,8 @@ const Banner = (props) => {
   const BannerContainer = styled.div`
     display: flex;
     justify-content: center;
-    height: ${props.height};
     align-items: center;
+    height: ${props.height};
     color: #fff;
     background-color: #13263b;
     padding: 7rem 0;
@@ -27,7 +27,7 @@ const Banner = (props) => {
   return (
     <BannerContainer id={props.id}>
       <BannerTitle>{props.title}</BannerTitle>
-      <BannerText>{props.text}</BannerText>
+      {props.text ? <BannerText>{props.text}</BannerText> : null}
     </BannerContainer>
   );
 };

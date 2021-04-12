@@ -126,3 +126,13 @@ export const SubmitButton = styled.button`
       color: #13263b;
     }
   `;
+
+export const IconContainer = styled.a`
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #3b5998;
+
+  &:visited {
+    color: #3b5998;
+  }
+`

@@ -14,7 +14,10 @@ import {
   ContactP,
   SubmitButton,
   ContactFormContainer,
+  IconContainer,
 } from "./ContactElements";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 
 import axios from "axios";
 
@@ -85,7 +88,11 @@ const ContactSection = () => {
         <ContactSectionWrapper>
           <ContactGrid>
             <ContactFormContainer>
-              <ContactForm>
+              <ContactForm
+                data-aos="zoom-in-right"
+                data-aos-duration="1000"
+                data-aos-once="true"
+              >
                 <MyTextInput
                   label="Name"
                   name="name"
@@ -110,7 +117,11 @@ const ContactSection = () => {
             </ContactFormContainer>
 
             <Contact>
-              <ContactBody>
+              <ContactBody
+                data-aos="zoom-in-left"
+                data-aos-duration="1000"
+                data-aos-once="true"
+              >
                 <ContactTitle>Get in touch with us</ContactTitle>
                 <ContactP>
                   At MSI, we are always available, responsive, and committed to
@@ -119,6 +130,13 @@ const ContactSection = () => {
                   will be in touch with you shortly.
                 </ContactP>
                 <ContactTitle>Connect with us on Social Media</ContactTitle>
+                <IconContainer
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon icon={faFacebookSquare} size="3x" />
+                </IconContainer>
               </ContactBody>
             </Contact>
           </ContactGrid>

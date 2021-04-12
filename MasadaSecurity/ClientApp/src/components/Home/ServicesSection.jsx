@@ -1,13 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { SectionTitle } from "../Shared/SectionTitle";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUsers,
-  faSearch,
-  faUserShield,
-  faUserSecret,
-} from "@fortawesome/free-solid-svg-icons";
 
 const SectionWrapper = styled.div`
   padding: 7rem 0;
@@ -31,9 +24,11 @@ const ServicesGrid = styled.div`
 const ServicesCard = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 0 1rem;
   max-width: 500px;
+  align-items: center;
+  max-height: 300px;
 `;
 
 const HR = styled.hr`
@@ -47,6 +42,7 @@ const ServicesCardTitle = styled.h2`
   padding: 3rem 0 0.5rem 0;
   text-align: left;
   color: #13263b;
+  width: 100%;
 `;
 
 const ServicesCardDescription = styled.p`
@@ -56,10 +52,6 @@ const ServicesCardDescription = styled.p`
 `;
 
 let style = { color: "#13263b" };
-let iconStyle = {
-  marginRight: "1.5rem",
-  width: "25px",
-};
 
 const ServicesSection = () => {
   return (
@@ -67,9 +59,12 @@ const ServicesSection = () => {
       <SectionTitle style={style}>Our Services</SectionTitle>
       <Wrapper>
         <ServicesGrid>
-          <ServicesCard>
+          <ServicesCard
+            data-aos="zoom-in"
+            data-aos-duration="800"
+            data-aos-once="true"
+          >
             <ServicesCardTitle>
-              <FontAwesomeIcon icon={faSearch} size="lg" style={iconStyle} />
               Criminal and Civil Investigation
             </ServicesCardTitle>
             <HR />
@@ -78,15 +73,12 @@ const ServicesSection = () => {
               present evidence for criminal and civil cases.
             </ServicesCardDescription>
           </ServicesCard>
-          <ServicesCard>
-            <ServicesCardTitle>
-              <FontAwesomeIcon
-                icon={faUserShield}
-                size="lg"
-                style={iconStyle}
-              />
-              Threat assessments
-            </ServicesCardTitle>
+          <ServicesCard
+            data-aos="zoom-in"
+            data-aos-duration="800"
+            data-aos-once="true"
+          >
+            <ServicesCardTitle>Threat assessments</ServicesCardTitle>
             <HR />
             <ServicesCardDescription>
               Threat assessments are a factual-based approach to finding
@@ -95,27 +87,12 @@ const ServicesSection = () => {
               proactive.
             </ServicesCardDescription>
           </ServicesCard>
-          <ServicesCard>
-            <ServicesCardTitle>
-              <FontAwesomeIcon icon={faUsers} size="lg" style={iconStyle} />
-              Security Consulting
-            </ServicesCardTitle>
-            <HR />
-            <ServicesCardDescription>
-              With our years of experience, we have seen several types of crime
-              scenes and faulty camera angles. Let us help you prevent
-              burglaries by finding the right spots for your security system.
-            </ServicesCardDescription>
-          </ServicesCard>
-          <ServicesCard>
-            <ServicesCardTitle>
-              <FontAwesomeIcon
-                icon={faUserSecret}
-                size="lg"
-                style={iconStyle}
-              />
-              Intelligence Collections
-            </ServicesCardTitle>
+          <ServicesCard
+            data-aos="zoom-in"
+            data-aos-duration="800"
+            data-aos-once="true"
+          >
+            <ServicesCardTitle>Intelligence Collections</ServicesCardTitle>
             <HR />
             <ServicesCardDescription>
               Intelligence Collections is a process used to find information
@@ -123,6 +100,19 @@ const ServicesSection = () => {
               restricted or secret and allows us to add an extra layer of
               protection to the company, as we see dangers that we may not have
               seen otherwise.
+            </ServicesCardDescription>
+          </ServicesCard>
+          <ServicesCard
+            data-aos="zoom-in"
+            data-aos-duration="800"
+            data-aos-once="true"
+          >
+            <ServicesCardTitle>Security Consulting</ServicesCardTitle>
+            <HR />
+            <ServicesCardDescription>
+              With our years of experience, we have seen several types of crime
+              scenes and faulty camera angles. Let us help you prevent
+              burglaries by finding the right spots for your security system.
             </ServicesCardDescription>
           </ServicesCard>
         </ServicesGrid>

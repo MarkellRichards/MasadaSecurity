@@ -53,8 +53,18 @@ const AboutSection = () => {
       <AboutGrid>
         <AboutSummary>
           <AboutSummaryBody>
-            <AboutSummaryTitle>Our Founder</AboutSummaryTitle>
-            <AboutSummaryP>
+            <AboutSummaryTitle
+              data-aos="fade-right"
+              data-aos-duration="800"
+              data-aos-once="true"
+            >
+              Our Founder
+            </AboutSummaryTitle>
+            <AboutSummaryP
+              data-aos="fade-right"
+              data-aos-duration="800"
+              data-aos-once="true"
+            >
               As a young Airman First Class, (A1C) in the USAF, Isaiah
               envisioned someday having his own investigations firm. So, he
               purchased a name plate with the inscription of CEO of Precise
@@ -69,7 +79,11 @@ const AboutSection = () => {
               for a USAF Health Professions Scholarship and pursued a Master of
               Social Work at the University of Texas at San Antonio.
             </AboutSummaryP>
-            <AboutSummaryP>
+            <AboutSummaryP
+              data-aos="fade-right"
+              data-aos-duration="800"
+              data-aos-once="true"
+            >
               Fast Forward to 2019, Isaiah made the decision to change the name
               of the firm from Precise Investigations to Masada Security
               International, (MSI, LLC). The name change better reflects the
@@ -84,7 +98,13 @@ const AboutSection = () => {
             </AboutSummaryP>
           </AboutSummaryBody>
         </AboutSummary>
-        <AboutImage src="/assets/portrait.jpg" alt="Founder photo" />
+        <AboutImage
+          data-aos="fade-left"
+          data-aos-duration="800"
+          data-aos-once="true"
+          src="/assets/portrait.jpg"
+          alt="Founder photo"
+        />
       </AboutGrid>
     </AboutSectionWrapper>
   );

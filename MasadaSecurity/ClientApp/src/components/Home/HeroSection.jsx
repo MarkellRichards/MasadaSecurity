@@ -1,6 +1,7 @@
 import React from "react";
 import { ButtonLink } from "../Shared/Button";
 import styled from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
 
 const HeroContainer = styled.div`
   height: 100vh;
@@ -14,7 +15,7 @@ const HeroContainer = styled.div`
     url("/assets/HeroImage.jpg") no-repeat center center;
 `;
 
-const ContentContainer = styled.div`
+const ContentContainer = styled(motion.div)`
   max-width: 1100px;
   width: 100%;
   padding: 0 1.5rem;
@@ -46,30 +47,30 @@ const HeroParagraph = styled.p`
   width: fit-content;
   font-size: 2.4rem;
   color: #fff;
-  border-bottom: 3px #fff solid;
+  /* border-bottom: 3px #fff solid; */
 `;
 
 const HeroSection = () => {
   return (
     <>
       <HeroContainer id="#hero">
-        <ContentContainer>
-          <HeroContent>
-            <HeroTitle>Masada Security</HeroTitle>
-            <HeroParagraph>
-              Fast, Affordable, and Efficient security for you and your company.
-            </HeroParagraph>
-            <ButtonLink
-              to="#about"
-              smooth={true}
-              duration={500}
-              spy={true}
-              offset={-80}
-            >
-              Learn More
-            </ButtonLink>
-          </HeroContent>
-        </ContentContainer>
+        <AnimatePresence>
+          <ContentContainer>
+            <HeroContent>
+              <HeroTitle>Masada Security</HeroTitle>
+              <HeroParagraph>"For such a time as this"</HeroParagraph>
+              <ButtonLink
+                to="#about"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-80}
+              >
+                Learn More
+              </ButtonLink>
+            </HeroContent>
+          </ContentContainer>
+        </AnimatePresence>
       </HeroContainer>
     </>
   );
