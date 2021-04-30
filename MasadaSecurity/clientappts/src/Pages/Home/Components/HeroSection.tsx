@@ -1,6 +1,6 @@
-import React from "react";
-import { ButtonLink } from "../Shared/Button";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import ButtonLink from '../../../Shared/Button';
 
 const HeroContainer = styled.div`
   height: 100vh;
@@ -11,7 +11,7 @@ const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("/assets/HeroImage.jpg") no-repeat center center;
+    url('/assets/HeroImage.jpg') no-repeat center center;
 `;
 
 const ContentContainer = styled.div`
@@ -49,28 +49,19 @@ const HeroParagraph = styled.p`
   /* border-bottom: 3px #fff solid; */
 `;
 
-const HeroSection = () => {
-  return (
-    <>
-      <HeroContainer id="#hero">
-        <ContentContainer>
-          <HeroContent>
-            <HeroTitle>Masada Security</HeroTitle>
-            <HeroParagraph>"For such a time as this"</HeroParagraph>
-            <ButtonLink
-              to="#about"
-              smooth={true}
-              duration={500}
-              spy={true}
-              offset={-80}
-            >
-              Learn More
-            </ButtonLink>
-          </HeroContent>
-        </ContentContainer>
-      </HeroContainer>
-    </>
-  );
-};
-
+const HeroSection: React.FC = () => (
+  <>
+    <HeroContainer id="#hero">
+      <ContentContainer>
+        <HeroContent>
+          <HeroTitle>Masada Security</HeroTitle>
+          <HeroParagraph> &ldquo;For such a time as this&rdquo;</HeroParagraph>
+          <ButtonLink to="#about" smooth duration={500} spy offset={-80}>
+            Learn More
+          </ButtonLink>
+        </HeroContent>
+      </ContentContainer>
+    </HeroContainer>
+  </>
+);
 export default HeroSection;
