@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, useField, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
+
 import {
   ContactSectionWrapper,
   ContactGrid,
@@ -14,10 +15,13 @@ import {
   ContactTitle,
   Contact,
   ContactP,
-  SubmitButton,
   ContactFormContainer,
   IconContainer,
+  SubmissionSuccess,
+  SubmissionFailure,
+  SubmitButton,
 } from './ContactElements';
+import Email from '../../../Services/api';
 
 interface Props {
   label: string;
@@ -93,6 +97,11 @@ const MyTextArea: React.FC<Props> = ({
 };
 
 const ContactSection: React.FC = () => {
+  const [isError, setIsError] = useState<boolean>(false);
+  const [
+    emailSubmittedSuccessfully,
+    setEmailSubmittedSuccessfully,
+  ] = useState<boolean>(false);
   return (
     <ContactSectionWrapper>
       <ContactGrid>
@@ -108,10 +117,16 @@ const ContactSection: React.FC = () => {
             message: Yup.string().max(400, 'Must be 400 characters or less'),
           })}
           onSubmit={(values, actions) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              actions.setSubmitting(false);
-            }, 1000);
+            Email.sendEmail(values)
+              .then(() => {
+                actions.resetForm();
+                actions.setSubmitting(false);
+                setEmailSubmittedSuccessfully(true);
+              })
+              .catch(() => {
+                actions.setSubmitting(false);
+                setIsError(true);
+              });
           }}
         >
           {() => (
@@ -139,6 +154,12 @@ const ContactSection: React.FC = () => {
                   type="message"
                   placeholder="Enter message here..."
                 />
+                {isError && (
+                  <SubmissionFailure>Email failed to submit</SubmissionFailure>
+                )}
+                {emailSubmittedSuccessfully && (
+                  <SubmissionSuccess>Email sent successfully</SubmissionSuccess>
+                )}
                 <SubmitButton type="submit">Submit</SubmitButton>
               </ContactForm>
             </ContactFormContainer>

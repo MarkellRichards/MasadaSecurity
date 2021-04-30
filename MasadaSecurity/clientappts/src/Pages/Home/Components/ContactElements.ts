@@ -156,3 +156,14 @@ export const IconContainer = styled.a`
     color: #3b5998;
   }
 `;
+
+export const SubmissionSuccess = styled.div`
+  margin: 2rem 0;
+  font-size: 1.6rem;
+  color: green;
+`;
+export const SubmissionFailure = styled.div`
+  margin: 2rem 0;
+  color: red;
+  font-size: 1.6rem;
+`;
