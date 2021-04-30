@@ -451,3 +451,5 @@ $RECYCLE.BIN/
 **/appsettings.staging.json
 **/appsettings.production.json
 MasadaSecurity/appsettings.json
+.vscode/launch.json
+.vscode/tasks.json
