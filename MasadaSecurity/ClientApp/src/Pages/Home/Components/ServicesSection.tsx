@@ -1,10 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { SectionTitle } from "../Shared/SectionTitle";
+import React from 'react';
+import styled from 'styled-components';
+import SectionTitle from '../../../Shared/SectionTitle';
 
 const SectionWrapper = styled.div`
   padding: 7rem 0;
   background: #fff;
+  overflow-x: hidden;
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -19,6 +20,12 @@ const ServicesGrid = styled.div`
   padding: 3rem 0;
   column-gap: 4rem;
   row-gap: 6rem;
+  @media screen and (max-width: 1100px) {
+    padding: 3rem;
+  }
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ServicesCard = styled.div`
@@ -29,6 +36,9 @@ const ServicesCard = styled.div`
   max-width: 500px;
   align-items: center;
   max-height: 300px;
+  @media screen and (max-width: 400px) {
+    padding: 0 3rem;
+  }
 `;
 
 const HR = styled.hr`
@@ -51,9 +61,9 @@ const ServicesCardDescription = styled.p`
   color: #13263b;
 `;
 
-let style = { color: "#13263b" };
+const style = { color: '#13263b' };
 
-const ServicesSection = () => {
+const ServicesSection: React.FC = () => {
   return (
     <SectionWrapper id="#services">
       <SectionTitle style={style}>Our Services</SectionTitle>

@@ -19,7 +19,7 @@ export const ContactGrid = styled.div`
   max-width: 1100px;
   height: 100%;
   overflow: none;
-  @media screen and (max-width: 675px) {
+  @media screen and (max-width: 800px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -37,7 +37,7 @@ export const ContactBody = styled.div`
   flex-direction: column;
   padding: 7rem 5rem;
   height: 100%;
-  @media screen and (max-width: 675px) {
+  @media screen and (max-width: 800px) {
     order: 1;
     padding: 5rem 4rem;
   }
@@ -67,7 +67,7 @@ export const ContactFormContainer = styled.div`
   flex-direction: column;
   padding: 7rem 5rem;
   height: 100%;
-  @media screen and (max-width: 675px) {
+  @media screen and (max-width: 800px) {
     order: 2;
     padding: 0 4rem 4rem 4rem;
   }

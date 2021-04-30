@@ -447,3 +447,7 @@ $RECYCLE.BIN/
 !.vscode/launch.json
 !.vscode/extensions.json
 
+**/appsettings.development.json
+**/appsettings.staging.json
+**/appsettings.production.json
+MasadaSecurity/appsettings.json

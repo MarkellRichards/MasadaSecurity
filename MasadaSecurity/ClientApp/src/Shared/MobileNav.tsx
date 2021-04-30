@@ -27,7 +27,7 @@ export const MobileNavContainer = styled.div`
 export const CloseIcon = styled(FontAwesomeIcon)`
   color: #fff;
   &:hover {
-    color: #002350;
+    color: #13263b;
   }
 `;
 
@@ -68,7 +68,7 @@ export const MobileNavLink = styled(LinkS)`
   color: #fff;
   cursor: pointer;
   &:hover {
-    color: #002350;
+    color: #13263b;
     transition: 0.2s ease-in-out;
   }
 `;
